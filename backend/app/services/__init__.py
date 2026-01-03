@@ -21,6 +21,10 @@ from app.services.role import (
     RoleService,
     seed_default_roles,
 )
+from app.services.user import (
+    UserService,
+    invite_user,
+)
 
 __all__ = [
     # Audit Service
@@ -42,4 +46,7 @@ __all__ = [
     # Role Service
     "RoleService",
     "seed_default_roles",
+    # User Service
+    "UserService",
+    "invite_user",
 ]
