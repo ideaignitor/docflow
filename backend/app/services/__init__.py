@@ -17,6 +17,10 @@ from app.services.organization import (
     create_organization,
 )
 from app.services.retention import RetentionService
+from app.services.role import (
+    RoleService,
+    seed_default_roles,
+)
 
 __all__ = [
     # Audit Service
@@ -35,4 +39,7 @@ __all__ = [
     "create_organization",
     # Retention Service
     "RetentionService",
+    # Role Service
+    "RoleService",
+    "seed_default_roles",
 ]

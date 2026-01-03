@@ -197,28 +197,35 @@ class LegalHoldScopeType(str, Enum):
 class RoleType(str, Enum):
     """Standard RBAC role types.
 
-    Predefined roles following least-privilege principles:
-    - SUPER_ADMIN: Full system access (DocFlow platform admin)
-    - ORG_ADMIN: Full access within organization
+    Default roles seeded for each organization:
     - HR_ADMIN: Full HR operations, can manage employees and documents
-    - HR_GENERALIST: Standard HR operations, limited configuration
-    - PAYROLL_SPECIALIST: Access to payroll-related documents (W-4, direct deposit)
-    - BENEFITS_ADMIN: Access to benefits enrollment documents
-    - HIRING_MANAGER: View employees in their department
+    - HR_MANAGER: Standard HR management operations
+    - LEGAL: Access for legal compliance and hold management
+    - IT_ADMIN: Technical administration and integration management
+    - AUDITOR: Read-only access to audit logs and compliance reports
     - EMPLOYEE: Self-service access to own documents
 
     COMPLIANCE NOTE: Role assignments must be audited. Access to PII
     (SSN, salary, bank accounts) should be restricted to roles that
     require it for their job function.
     """
-    SUPER_ADMIN = "super_admin"
-    ORG_ADMIN = "org_admin"
     HR_ADMIN = "hr_admin"
-    HR_GENERALIST = "hr_generalist"
-    PAYROLL_SPECIALIST = "payroll_specialist"
-    BENEFITS_ADMIN = "benefits_admin"
-    HIRING_MANAGER = "hiring_manager"
+    HR_MANAGER = "hr_manager"
+    LEGAL = "legal"
+    IT_ADMIN = "it_admin"
+    AUDITOR = "auditor"
     EMPLOYEE = "employee"
+
+
+# Default roles to seed for new organizations
+DEFAULT_ORG_ROLES = [
+    RoleType.HR_ADMIN,
+    RoleType.HR_MANAGER,
+    RoleType.LEGAL,
+    RoleType.IT_ADMIN,
+    RoleType.AUDITOR,
+    RoleType.EMPLOYEE,
+]
 
 
 class USState(str, Enum):
