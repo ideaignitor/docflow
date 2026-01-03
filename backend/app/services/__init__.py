@@ -12,6 +12,10 @@ from app.services.audit import (
     emit_legal_hold_created,
     emit_legal_hold_released,
 )
+from app.services.organization import (
+    OrganizationService,
+    create_organization,
+)
 from app.services.retention import RetentionService
 
 __all__ = [
@@ -26,6 +30,9 @@ __all__ = [
     "emit_employee_updated",
     "emit_legal_hold_created",
     "emit_legal_hold_released",
+    # Organization Service
+    "OrganizationService",
+    "create_organization",
     # Retention Service
     "RetentionService",
 ]
