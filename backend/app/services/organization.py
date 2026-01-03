@@ -18,6 +18,7 @@ from app.schemas.organizations import (
     OrganizationStatus,
 )
 from app.services.audit import emit_audit_event
+from app.services.role import seed_default_roles
 from app.core.exceptions import ConflictError, NotFoundError
 
 logger = logging.getLogger(__name__)
@@ -169,7 +170,15 @@ class OrganizationService:
             },
         )
 
-        logger.info(f"Organization created successfully: {org_id}")
+        # Seed default roles for the new organization
+        await seed_default_roles(
+            db=self.db,
+            org_id=org_id,
+            actor_id=actor_id,
+            actor_email=actor_email,
+        )
+
+        logger.info(f"Organization created successfully with default roles: {org_id}")
 
         return OrganizationResponse(
             id=org_id,

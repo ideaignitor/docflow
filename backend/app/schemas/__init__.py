@@ -67,6 +67,13 @@ from app.schemas.legal_hold import (
     LegalHoldReleaseResponse,
     DocumentLegalHoldStatus,
 )
+from app.schemas.roles import (
+    RoleBase,
+    RoleCreate,
+    RoleResponse,
+    RoleListResponse,
+    SeedRolesResponse,
+)
 
 __all__ = [
     # Common
@@ -127,4 +134,10 @@ __all__ = [
     "LegalHoldRelease",
     "LegalHoldReleaseResponse",
     "DocumentLegalHoldStatus",
+    # Roles
+    "RoleBase",
+    "RoleCreate",
+    "RoleResponse",
+    "RoleListResponse",
+    "SeedRolesResponse",
 ]

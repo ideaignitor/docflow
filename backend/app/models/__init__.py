@@ -13,6 +13,7 @@ from app.models.enums import (
     LegalHoldScopeType,
     RoleType,
     USState,
+    DEFAULT_ORG_ROLES,
 )
 from app.models.base import (
     ZeroDBBaseModel,
@@ -39,6 +40,7 @@ __all__ = [
     "LegalHoldScopeType",
     "RoleType",
     "USState",
+    "DEFAULT_ORG_ROLES",
     # Base classes
     "ZeroDBBaseModel",
     "TimestampMixin",
