@@ -12,6 +12,13 @@ from app.services.audit import (
     emit_legal_hold_created,
     emit_legal_hold_released,
 )
+from app.services.auth import (
+    AuthService,
+    request_magic_link,
+    verify_magic_link,
+    refresh_access_token,
+    get_current_user,
+)
 from app.services.organization import (
     OrganizationService,
     create_organization,
@@ -38,6 +45,12 @@ __all__ = [
     "emit_employee_updated",
     "emit_legal_hold_created",
     "emit_legal_hold_released",
+    # Auth Service
+    "AuthService",
+    "request_magic_link",
+    "verify_magic_link",
+    "refresh_access_token",
+    "get_current_user",
     # Organization Service
     "OrganizationService",
     "create_organization",
