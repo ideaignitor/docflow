@@ -19,6 +19,12 @@ from app.services.auth import (
     refresh_access_token,
     get_current_user,
 )
+from app.services.document import (
+    DocumentService,
+    create_document,
+    get_document,
+    get_expiring_documents,
+)
 from app.services.organization import (
     OrganizationService,
     create_organization,
@@ -51,6 +57,11 @@ __all__ = [
     "verify_magic_link",
     "refresh_access_token",
     "get_current_user",
+    # Document Service
+    "DocumentService",
+    "create_document",
+    "get_document",
+    "get_expiring_documents",
     # Organization Service
     "OrganizationService",
     "create_organization",
