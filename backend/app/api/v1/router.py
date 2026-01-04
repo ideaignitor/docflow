@@ -3,6 +3,7 @@
 from fastapi import APIRouter
 
 from app.config import settings
+from app.api.routes.auth import router as auth_router
 from app.api.routes.review import router as review_router
 from app.api.routes.organizations import router as organizations_router
 from app.api.routes.users import router as users_router
@@ -23,6 +24,7 @@ async def v1_root():
 
 
 # Include routers
+router.include_router(auth_router, prefix="/auth", tags=["Authentication"])
 router.include_router(review_router, prefix="/review", tags=["Review Workflow"])
 router.include_router(organizations_router, prefix="/organizations", tags=["Organizations"])
 router.include_router(users_router, prefix="/users", tags=["Users"])

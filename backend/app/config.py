@@ -33,6 +33,12 @@ class Settings(BaseSettings):
         description="Allowed CORS origins",
     )
 
+    # Frontend URL (for magic links, etc.)
+    FRONTEND_URL: str = Field(
+        default="http://localhost:3000",
+        description="Frontend application URL",
+    )
+
     # ZeroDB Configuration
     ZERODB_BASE_URL: str = Field(
         default="https://api.ainative.studio/v1",
